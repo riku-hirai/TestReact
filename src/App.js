@@ -13,6 +13,17 @@ const products = [
   { title: 'Apple', isFruit: true, id: 3 },
 ];
 
+const listItems = products.map(product =>
+  <li
+    key={product.id}
+    style={{
+      color: product.isFruit ? 'magenta' : 'darkgreen'
+    }}
+  >
+    {product.title}
+  </li>
+);
+
 function MyButton() {
   return (
     <button>
@@ -22,16 +33,7 @@ function MyButton() {
 }
 
 export default function MyApp() {
-  const listItems = products.map(product =>
-    <li
-      key={product.id}
-      style={{
-        color: product.isFruit ? 'magenta' : 'darkgreen'
-      }}
-    >
-      {product.title}
-    </li>
-  );
+
   return (
     <div className='App'>
       <h1>Welcome to my app</h1>
